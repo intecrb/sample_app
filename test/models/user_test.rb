@@ -38,4 +38,16 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 
+  test "email address should be unique" do
+    # 同じ属性を持つデータを複製
+    duplicate_user = @user.dup
+    # メールアドレスのプロパティを大文字に変換
+    duplicate_user.email = @user.email.upcase
+    # DBに保存
+    @user.save
+    # duplicate_userのvalidation_check
+    # 保存した後なので、一意性のチェックがエラーになる
+    assert_not duplicate_user.valid?
+  end
+
 end
