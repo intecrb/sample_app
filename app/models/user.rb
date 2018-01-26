@@ -15,5 +15,5 @@ class User < ApplicationRecord
   has_secure_password
 
   # 存在性のバリデーション
-  # validates :password, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 }
 end
