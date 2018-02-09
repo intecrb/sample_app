@@ -5,9 +5,11 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
   test "invalid signup information" do
     # signup_pathがGETできるか
     get signup_path
+    # signup_pathのformがあるか？
+    assert_select 'form[action="/signup"]'
     # ユーザ登録した前後でUserの数が変わってないか？
     assert_no_difference 'User.count' do
-      post users_path,
+      post signup_path,
       params: {
         user: {
           name:  "",
@@ -21,7 +23,6 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     assert_template 'users/new'
     # class="field_with_errors"である<div>タグが存在するか
     assert_select 'div.field_with_errors'
-
     # id="error_explanation"である<div>タグが存在するか
     assert_select 'div#error_explanation' do
       # <div id="error_explanation">の中に、<ul>があるか
