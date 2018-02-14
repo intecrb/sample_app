@@ -35,4 +35,25 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test "valid signup information" do
+    # signup_pathがGETできるか
+    get signup_path
+    # ユーザ登録した前後でUserが登録されているか
+    assert_difference 'User.count', 1 do
+      post signup_path,
+      params: {
+        user: {
+          name:  "Example User",
+          email: "user@exapmple.com",
+          password:              "password",
+          password_confirmation: "password"
+        }
+      }
+    end
+    
+    follow_redirect!
+    # users/showが表示されているか？
+    assert_template 'users/show'
+  end
+
 end
