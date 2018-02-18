@@ -15,7 +15,9 @@ RUN apt-get update && apt-get install -y \
 
 COPY Gemfile $APP_ROOT
 COPY Gemfile.lock $APP_ROOT
+
 RUN bundle install
+RUN rails db:migrate
 
 COPY . $APP_ROOT
 
