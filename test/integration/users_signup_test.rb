@@ -1,3 +1,4 @@
+# coding: utf-8
 require 'test_helper'
 
 class UsersSignupTest < ActionDispatch::IntegrationTest
@@ -55,5 +56,4 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     # users/showが表示されているか？
     assert_template 'users/show'
   end
-
 end
