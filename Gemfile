@@ -12,6 +12,7 @@ gem 'jquery-rails', '4.3.1'
 gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.7.0'
 gem 'hirb'
+gem 'awesome_print'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
