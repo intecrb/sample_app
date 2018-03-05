@@ -6,8 +6,8 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     @user = users(:michael)
   end
 
-  # 有効なアカウントではloginできないことを確認するテスト
-  test "login with valid information" do
+  # 有効なアカウントではloginできることを確認するテスト
+  test "login with valid information followed by logout" do
     # /loginの画面ですか？
     get login_path
     post login_path,
@@ -17,6 +17,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
         password: 'password'
       }
     }
+    assert is_logged_in?
     # リダイレクト先が正しいですか？
     assert_redirected_to @user
     # 実際にリダイレクトする
@@ -26,6 +27,15 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", login_path, count: 0
     assert_select "a[href=?]", logout_path
     assert_select "a[href=?]", user_path(@user)
+
+    # ログアウトする
+    delete logout_path
+    assert_not is_logged_in?
+    assert_redirected_to root_url
+    follow_redirect!
+    assert_select "a[href=?]", login_path
+    assert_select "a[href=?]", logout_path,      count: 0
+    assert_select "a[href=?]", user_path(@user), count: 0
   end
 
   # 無効なアカウントではloginできないことを確認するテスト
