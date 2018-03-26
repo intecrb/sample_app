@@ -8,6 +8,8 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       # userをsessionに格納する
       log_in user
+      # remenberメソッドを使って、ログイン情報を記録させる
+      remember user
       # ユーザログイン後にユーザ情報のページにリダイレクトする
       redirect_to user
     else
