@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       # userをsessionに格納する
       log_in user
       # remenberメソッドを使って、ログイン情報を記録させる
-      remember user
+      params[:session][:remember_me] == '1' ? remember(user) : forget(user)
       # ユーザログイン後にユーザ情報のページにリダイレクトする
       redirect_to user
     else
