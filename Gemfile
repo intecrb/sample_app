@@ -13,6 +13,7 @@ gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.7.0'
 gem 'hirb'
 gem 'awesome_print'
+gem 'faker',          '1.7.3'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
