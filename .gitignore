@@ -24,3 +24,6 @@
 
 # Ignore Spring files.
 /spring
+
+# Ignore vendor/bundle
+/vendor/bundle
