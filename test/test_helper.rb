@@ -19,6 +19,14 @@ class ActiveSupport::TestCase
   def log_in_as(user)
     session[:user_id] = user.id
   end
+
+  # 現在のユーザーをログアウトする
+  def log_out
+    forget(current_user)
+    session.delete(:user_id)
+    @current_user = nil
+  end
+  
 end
 
 class ActionDispatch::IntegrationTest

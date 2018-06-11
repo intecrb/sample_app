@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   # GET /users/new -> users#new
   # POST /users/new -> users#create
+  # GET /users -> users#index
   resources :users
 
 end
