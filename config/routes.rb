@@ -18,5 +18,6 @@ Rails.application.routes.draw do
   # POST /users/new -> users#create
   # GET /users -> users#index
   resources :users
+  resources :account_activations, only: [:edit]
 
 end
