@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/intecrb/sample_app.svg?branch=master)](https://travis-ci.org/intecrb/sample_app?branch=master)
+
 # Ruby on Rails チュートリアルのサンプルアプリケーション
 
 これは、次の教材で作られたサンプルアプリケーションです。   

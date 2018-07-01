@@ -3,6 +3,9 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 require "minitest/reporters"
 Minitest::Reporters.use!
+# Coverage
+require 'simplecov'
+SimpleCov.start 'rails'
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests
@@ -26,7 +29,7 @@ class ActiveSupport::TestCase
     session.delete(:user_id)
     @current_user = nil
   end
-  
+
 end
 
 class ActionDispatch::IntegrationTest

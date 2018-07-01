@@ -27,3 +27,6 @@
 
 # Ignore vendor/bundle
 /vendor/bundle
+
+# Ignore coverage
+/coverage/*
