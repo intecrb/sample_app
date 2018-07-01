@@ -20,6 +20,11 @@ gem 'bootstrap-will_paginate', '1.0.0'
 group :development, :test do
   gem 'sqlite3', '1.3.13'
   gem 'byebug',  '9.0.6', platform: :mri
+  gem 'capybara', '2.15.4'
+  gem "selenium-webdriver", "3.0.1"
+  gem 'minitest-rails'
+  gem "minitest-rails-capybara"
+  gem 'chromedriver-helper'
 end
 
 group :development do
