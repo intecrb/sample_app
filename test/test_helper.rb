@@ -7,6 +7,9 @@ Minitest::Reporters.use!
 require 'simplecov'
 SimpleCov.start 'rails'
 
+require 'simplecov-shield'
+SimpleCov.formatter = SimpleCov::Formatter::ShieldFormatter
+
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests
   # in alphabetical order.

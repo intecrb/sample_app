@@ -25,7 +25,9 @@ group :development, :test do
   gem 'minitest-rails'
   gem "minitest-rails-capybara"
   gem 'chromedriver-helper'
+  gem 'httparty'
   gem 'simplecov'
+  gem 'simplecov-shield'
 end
 
 group :development do

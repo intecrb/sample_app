@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/intecrb/sample_app.svg?branch=master)](https://travis-ci.org/intecrb/sample_app?branch=master)
+[![Build Status](https://travis-ci.org/intecrb/sample_app.svg?branch=master)](https://travis-ci.org/intecrb/sample_app?branch=master) ![Coverage](coverage/coverage.svg)
 
 # Ruby on Rails チュートリアルのサンプルアプリケーション
 
