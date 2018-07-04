@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+
   get 'sessions/new'
 
   get 'users/new'
@@ -19,5 +21,5 @@ Rails.application.routes.draw do
   # GET /users -> users#index
   resources :users
   resources :account_activations, only: [:edit]
-
+  resources :password_resets,     only: [:new, :create, :edit, :update]
 end
