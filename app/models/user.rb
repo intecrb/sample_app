@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :microposts
-  
+  has_many :microposts, dependent: :destroy
+
   attr_accessor :remember_token, :activation_token, :reset_token
   before_create :create_activation_digest
   # emailはDBに保存する前に小文字にする
