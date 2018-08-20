@@ -9,7 +9,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     get root_path
     assert_response :success
     @page_title = "Home"
-    assert_select "title", "#{@page_title}|#{@base_title}"
+    assert_select "title", "#{@base_title}"
   end
 
   test "should get help" do
